@@ -1,10 +1,10 @@
-# PostgreSQL [![Build Status Image](https://travis-ci.org/nanobox-io/nanobox-docker-postgresql.svg)](https://travis-ci.org/nanobox-io/nanobox-docker-postgresql)
+# PostgreSQL [![Build Status Image](https://github.com/mu-box/microbox-docker-postgresql/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/microbox-docker-postgresql/actions)
 
-This is an PostgreSQL Docker image used to launch a PostgreSQL service on Nanobox. To use this image, add a data component to your `boxfile.yml` with the `nanobox/postgresql` image specified:
+This is an PostgreSQL Docker image used to launch a PostgreSQL service on Microbox. To use this image, add a data component to your `boxfile.yml` with the `mubox/postgresql` image specified:
 
 ```yaml
 data.db:
-  image: nanobox/postgresql
+  image: mubox/postgresql
 ```
 
 ## PostgreSQL Configuration Options
@@ -17,6 +17,7 @@ When configuring a PostgreSQL service in your boxfile.yml, you can specify which
 - 9.4
 - 9.5
 - 9.6
+- 10
 
 **Note:** PostgreSQL versions cannot be changed after the service is created. To use a different version, you'll have to create a new PostgreSQL service.
 
@@ -24,9 +25,9 @@ When configuring a PostgreSQL service in your boxfile.yml, you can specify which
 ```yaml
 # default setting
 data.db:
-  image: nanobox/postgresql
+  image: mubox/postgresql
   config:
-    version: 9.4
+    version: 10
 ```
 
 ### Custom Users/Permissions/Databases
@@ -34,7 +35,7 @@ You can create custom users with custom permissions as well as additional databa
 
 ```yaml
 data.postgresql:
-  image: nanobox/postgresql:9.5
+  image: mubox/postgresql:10
   config:
     users:
     - username: customuser
@@ -42,7 +43,7 @@ data.postgresql:
         privileges:
         - privilege: ALL PRIVILEGES
           type: DATABASE
-          'on': gonano
+          'on': gomicro
           grant: true
         - privilege: ALL PRIVILEGES
           type: DATABASE
@@ -52,7 +53,7 @@ data.postgresql:
         - SUPERUSER
 ```
 
-For each custom user specified, Nanobox will generate an environment variable for the user's password using the following pattern:
+For each custom user specified, Microbox will generate an environment variable for the user's password using the following pattern:
 
 ```yaml
 # Pattern
@@ -80,10 +81,10 @@ DATA_DB_DBUSER_PASS
 ```
 
 ## Request PostgreSQL Boxfile Configs
-One of the many benefits of using PostgreSQL is that it doesn't require much configuration. The project itself is finely tuned. However we know there are settings that users may want to tweak. If there's a setting you'd like to modify that is typically handled in the postresql.conf, please let us know by creating a [new issue on this project](https://github.com/nanobox-io/nanobox-docker-postgresql/issues/new).
+One of the many benefits of using PostgreSQL is that it doesn't require much configuration. The project itself is finely tuned. However we know there are settings that users may want to tweak. If there's a setting you'd like to modify that is typically handled in the postresql.conf, please let us know by creating a [new issue on this project](https://github.com/mu-box/microbox-docker-postgresql/issues/new).
 
 ## Help & Support
-This is a PostgreSQL Docker image provided by [Nanobox](http://nanobox.io). If you need help with this image, you can reach out to us in the [Nanobox Slack channel](http://nanoboxio.slack.com). If you are running into an issue with the image, feel free to [create a new issue on this project](https://github.com/nanobox-io/nanobox-docker-postgresql/issues/new).
+This is a PostgreSQL Docker image provided by [Microbox](http://microbox.cloud). If you need help with this image, you can reach out to us in the [Microbox Discord](https://discord.gg/MCDdHfy). If you are running into an issue with the image, feel free to [create a new issue on this project](https://github.com/mu-box/microbox-docker-postgresql/issues/new).
 
 ## License
-Mozilla Public License, version 2.0
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).

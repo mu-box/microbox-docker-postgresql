@@ -42,12 +42,12 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SCRIPT
     echo "Building docker image..."
     cd /vagrant
-    docker build -t nanobox/postgresql:9.3 --no-cache=true 9.3
-    docker tag nanobox/postgresql:9.3 nanobox/postgresql:9.3
-    docker build -t nanobox/postgresql:9.4 --no-cache=true 9.4
-    docker tag nanobox/postgresql:9.4 nanobox/postgresql:9.4
-    docker build -t nanobox/postgresql:9.5 --no-cache=true 9.5
-    docker tag nanobox/postgresql:9.5 nanobox/postgresql:9.5
+    docker build -t mubox/postgresql:9.3 --no-cache=true 9.3
+    docker tag mubox/postgresql:9.3 mubox/postgresql:9.3
+    docker build -t mubox/postgresql:9.4 --no-cache=true 9.4
+    docker tag mubox/postgresql:9.4 mubox/postgresql:9.4
+    docker build -t mubox/postgresql:9.5 --no-cache=true 9.5
+    docker tag mubox/postgresql:9.5 mubox/postgresql:9.5
   SCRIPT
 
 end

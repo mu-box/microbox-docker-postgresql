@@ -14,7 +14,7 @@ run_hook() {
 
   docker exec \
     $container \
-    /opt/nanobox/hooks/$hook "$payload"
+    /opt/microbox/hooks/$hook "$payload"
 }
 
 start_container() {
@@ -25,7 +25,7 @@ start_container() {
     -d \
     -e "PATH=$(path)" \
     --privileged \
-    nanobox/postgresql:$VERSION
+    mubox/postgresql:$VERSION
 }
 
 stop_container() {
@@ -35,9 +35,9 @@ stop_container() {
 
 path() {
   paths=(
-    "/opt/gonano/sbin"
-    "/opt/gonano/bin"
-    "/opt/gonano/bin"
+    "/opt/gomicro/sbin"
+    "/opt/gomicro/bin"
+    "/opt/gomicro/bin"
     "/usr/local/sbin"
     "/usr/local/bin"
     "/usr/sbin"

@@ -1,6 +1,6 @@
-# Nanobox Contribution Guidelines
+# Microbox Contribution Guidelines
 
-Thanks for your interest in helping on this Nanobox project. We try to keep the contribution process fairly simple, but we do have some guidelines to follow:
+Thanks for your interest in helping on this Microbox project. We try to keep the contribution process fairly simple, but we do have some guidelines to follow:
 
 ## Contribution Process
 
@@ -38,8 +38,8 @@ Once pushed, [create a new pull request](https://help.github.com/articles/using-
 Pull requests must do the following in order to be merged.
 
 1. Match the style of code already existing in the project.
-2. Must not contain any merge conflicts *(Pull and merge master before submitting the pull request)*.
+2. Must not contain any merge conflicts *(Pull and merge main before submitting the pull request)*.
 3. Include tests for the modifications in your commit.
 
 ## Docker Image Build
-Upon receiving the pull request, we will review the update(s) and merge them into master once approved. Once merged into master, a new Docker image will automatically be generated.
+Upon receiving the pull request, we will review the update(s) and merge them into main once approved. Once merged into main, a new Docker image will automatically be generated.
